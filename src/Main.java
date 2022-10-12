@@ -38,7 +38,6 @@ public class Main {
         System.out.println("Momba:");
         System.out.println(momba.hasRequiredContainers());
         System.out.println(momba.containerDifference());
-
          */
     }
 }
