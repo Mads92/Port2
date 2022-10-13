@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         Port jawah = new Port("Jawaharal Nehru", 2);
@@ -9,9 +11,13 @@ public class Main {
         Port salah = new Port("Salalah", 0);
 
         Port[] ports = new Port[] {jawah,tanju,dares,momba,zanzi,jebel,salah};
-        for (int i = 0; i < ports.length; i++) {
-            System.out.println(ports[i].name);
+        AdjacencyGraph portGraph = addPorts(ports);
+
+        System.out.println("INDEN SENDING");
+        for (int i = 0; i < portGraph.ports.size(); i++) {
+            System.out.println(portGraph.ports.get(i).name + " Containers: " + portGraph.ports.get(i).containers);
         }
+
         jawah.shipContainers(momba);
         jawah.shipContainers(dares);
 
@@ -28,8 +34,12 @@ public class Main {
         momba.shipContainers(salah);
         momba.shipContainers(jebel);
 
-        for (int i = 0; i < ports.length; i++) {
-            System.out.println(ports[i].containerDifference());
+        //printPorts(ports);
+        //portGraph.PrintGraph();
+        System.out.println("Efter: ");
+        for (int i = 0; i < portGraph.ports.size(); i++) {
+            Port p = portGraph.ports.get(i); // Used here so it doesn't have to be written out each time
+            System.out.println(p.name + " Current number of containers: " + p.containers + " Difference from correct number of containers: " + p.containerDifference());
         }
         /*
         System.out.println("Jawaharal Nehru:");
@@ -39,5 +49,24 @@ public class Main {
         System.out.println(momba.hasRequiredContainers());
         System.out.println(momba.containerDifference());
          */
+    }
+
+    public static void printPorts(Port[] ports){
+        for (int i = 0; i < ports.length; i++) {
+            System.out.println(ports[i].name + " difference from needed containers: " + ports[i].containerDifference() );
+        }
+        return;
+    }
+
+    public static AdjacencyGraph addPorts(Port[] ports){
+        AdjacencyGraph p = new AdjacencyGraph();
+        for (int i = 0; i < ports.length; i++) {
+            p.addVertex(ports[i]);
+        }
+        return p;
+    }
+
+    public static void reverseFlow(){
+
     }
 }
