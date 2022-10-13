@@ -9,9 +9,10 @@ public class Port {
         this.requiredContainers = containers;
     }
 
-    public void shipContainers(Port p){
+    public void shipContainers(Port p, int TEU){
         containers = containers - 1;
         p.containers += 1;
+
     }
 
     public boolean hasRequiredContainers(){

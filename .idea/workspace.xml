@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="378cbf28-59ca-461d-bb88-f1da01b38271" name="Changes" comment="VERY small cleaning">
-      <change afterPath="$PROJECT_DIR$/src/AdjacencyGraph.java" afterDir="false" />
+    <list default="true" id="378cbf28-59ca-461d-bb88-f1da01b38271" name="Changes" comment="Adjacency Graph added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,17 +28,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/madsk/IdeaProjects/Portfolio2/src",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/madsk/IdeaProjects/Portfolio2/src&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\madsk\IdeaProjects\Portfolio2\src" />
@@ -55,7 +53,8 @@
       <option name="presentableId" value="Default" />
       <updated>1665569599017</updated>
       <workItem from="1665569600518" duration="4782000" />
-      <workItem from="1665646412630" duration="3346000" />
+      <workItem from="1665646412630" duration="3371000" />
+      <workItem from="1665676585477" duration="1036000" />
     </task>
     <task id="LOCAL-00001" summary="Ports created, methods for shipping containers implemented,ass well as calculations of the number of excess/missing containers">
       <created>1665572858113</created>
@@ -71,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665574010731</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Adjacency Graph added">
+      <created>1665655398974</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665655398974</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,6 +98,7 @@
     <MESSAGE value="Ports created, methods for shipping containers implemented,ass well as calculations of the numer of excess/missing containers" />
     <MESSAGE value="Ports created, methods for shipping containers implemented,ass well as calculations of the number of excess/missing containers" />
     <MESSAGE value="VERY small cleaning" />
-    <option name="LAST_COMMIT_MESSAGE" value="VERY small cleaning" />
+    <MESSAGE value="Adjacency Graph added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjacency Graph added" />
   </component>
 </project>

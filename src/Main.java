@@ -18,21 +18,21 @@ public class Main {
             System.out.println(portGraph.ports.get(i).name + " Containers: " + portGraph.ports.get(i).containers);
         }
 
-        jawah.shipContainers(momba);
-        jawah.shipContainers(dares);
+        jawah.shipContainers(momba, 2000);
+        jawah.shipContainers(dares, 2000);
 
-        tanju.shipContainers(momba);
-        tanju.shipContainers(dares);
-        tanju.shipContainers(zanzi);
-        tanju.shipContainers(jebel);
-        tanju.shipContainers(salah);
+        tanju.shipContainers(momba,5000);
+        tanju.shipContainers(dares,3000);
+        tanju.shipContainers(zanzi,2000);
+        tanju.shipContainers(jebel,7000);
+        tanju.shipContainers(salah,7000);
 
-        dares.shipContainers(tanju);
-        dares.shipContainers(jawah);
-        dares.shipContainers(jebel);
+        dares.shipContainers(tanju,5000);
+        dares.shipContainers(jawah,3000);
+        dares.shipContainers(jebel,2000);
 
-        momba.shipContainers(salah);
-        momba.shipContainers(jebel);
+        momba.shipContainers(salah,2000);
+        momba.shipContainers(jebel,500);
 
         //printPorts(ports);
         //portGraph.PrintGraph();
