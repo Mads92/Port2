@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="378cbf28-59ca-461d-bb88-f1da01b38271" name="Changes" comment="Adjacency Graph added">
+    <list default="true" id="378cbf28-59ca-461d-bb88-f1da01b38271" name="Changes" comment="Added TEU's to shipments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Port.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Port.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +56,7 @@
       <updated>1665569599017</updated>
       <workItem from="1665569600518" duration="4782000" />
       <workItem from="1665646412630" duration="3371000" />
-      <workItem from="1665676585477" duration="1036000" />
+      <workItem from="1665676585477" duration="3286000" />
     </task>
     <task id="LOCAL-00001" summary="Ports created, methods for shipping containers implemented,ass well as calculations of the number of excess/missing containers">
       <created>1665572858113</created>
@@ -77,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665655398974</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added TEU's to shipments">
+      <created>1665677895102</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665677895102</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,6 +108,7 @@
     <MESSAGE value="Ports created, methods for shipping containers implemented,ass well as calculations of the number of excess/missing containers" />
     <MESSAGE value="VERY small cleaning" />
     <MESSAGE value="Adjacency Graph added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjacency Graph added" />
+    <MESSAGE value="Added TEU's to shipments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added TEU's to shipments" />
   </component>
 </project>

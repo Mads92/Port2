@@ -2,20 +2,20 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Port jawah = new Port("Jawaharal Nehru", 2);
-        Port tanju = new Port("Tanjung Pelepas", 5);
-        Port dares = new Port("Dar Es Salaam", 3);
-        Port momba = new Port("Mombasa", 2);
-        Port zanzi = new Port("Zanzibar", 0);
-        Port jebel = new Port("Jebel Ali Dubai",0);
-        Port salah = new Port("Salalah", 0);
+        Port jawah = new Port("Jawaharal Nehru", 2,4000);
+        Port tanju = new Port("Tanjung Pelepas", 5,24000);
+        Port dares = new Port("Dar Es Salaam", 3,10000);
+        Port momba = new Port("Mombasa", 2,2500);
+        Port zanzi = new Port("Zanzibar", 0,0);
+        Port jebel = new Port("Jebel Ali Dubai",0,0);
+        Port salah = new Port("Salalah", 0,0);
 
         Port[] ports = new Port[] {jawah,tanju,dares,momba,zanzi,jebel,salah};
         AdjacencyGraph portGraph = addPorts(ports);
 
         System.out.println("INDEN SENDING");
         for (int i = 0; i < portGraph.ports.size(); i++) {
-            System.out.println(portGraph.ports.get(i).name + " Containers: " + portGraph.ports.get(i).containers);
+            System.out.println(portGraph.ports.get(i).name + " Containers: " + portGraph.ports.get(i).containers + " TEU: " + portGraph.ports.get(i).teu + " Correct TEU: " + portGraph.ports.get(i).correctTEU);
         }
 
         jawah.shipContainers(momba, 2000);
@@ -39,7 +39,9 @@ public class Main {
         System.out.println("Efter: ");
         for (int i = 0; i < portGraph.ports.size(); i++) {
             Port p = portGraph.ports.get(i); // Used here so it doesn't have to be written out each time
-            System.out.println(p.name + " Current number of containers: " + p.containers + " Difference from correct number of containers: " + p.containerDifference());
+            //Deprecated possibly
+            //System.out.println(p.name + " Current number of containers: " + p.containers + " Difference from correct number of containers: " + p.containerDifference());
+            System.out.println(p.name + " Correct TEU " + p.correctTEU + " Current TEU: " + p.teu);
         }
         /*
         System.out.println("Jawaharal Nehru:");

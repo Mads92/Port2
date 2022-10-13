@@ -2,16 +2,22 @@ public class Port {
     String name;
     int containers;
     int requiredContainers;
+    int correctTEU;
+    int teu;
 
-    public Port(String name, int containers){
+    public Port(String name, int containers, int teu){
         this.name = name;
         this.containers = containers;
         this.requiredContainers = containers;
+        this.correctTEU = teu;
+        this.teu =teu;
     }
 
-    public void shipContainers(Port p, int TEU){
+    public void shipContainers(Port p, int transferredTeu){
         containers = containers - 1;
         p.containers += 1;
+        teu -= transferredTeu;
+        p.teu += transferredTeu;
 
     }
 
