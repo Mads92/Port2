@@ -18,8 +18,8 @@ public class Port {
     public void shipContainers(Port p, int transferredTeu) {
         containers = containers - 1;
         p.containers += 1;
-        teu -= transferredTeu;
-        p.teu += transferredTeu;
+        teu = teu - transferredTeu;
+        p.teu = p.teu + transferredTeu;
 
     }
 

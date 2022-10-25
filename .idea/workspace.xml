@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="378cbf28-59ca-461d-bb88-f1da01b38271" name="Changes" comment="A Christmas miracle">
+    <list default="true" id="378cbf28-59ca-461d-bb88-f1da01b38271" name="Changes" comment="Added additional check of surplus and lacking, potentially add an empty ArrayList to the ArrayList of sorted lists, to contain the completed ports">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Port.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Port.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +58,9 @@
       <workItem from="1665646412630" duration="3371000" />
       <workItem from="1665676585477" duration="3379000" />
       <workItem from="1666685975665" duration="5757000" />
-      <workItem from="1666695545336" duration="6292000" />
+      <workItem from="1666695545336" duration="6798000" />
+      <workItem from="1666708595763" duration="2955000" />
+      <workItem from="1666713849602" duration="1718000" />
     </task>
     <task id="LOCAL-00001" summary="Ports created, methods for shipping containers implemented,ass well as calculations of the number of excess/missing containers">
       <created>1665572858113</created>
@@ -128,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666701767026</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added additional check of surplus and lacking, potentially add an empty ArrayList to the ArrayList of sorted lists, to contain the completed ports">
+      <created>1666702154805</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1666702154805</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +169,7 @@
     <MESSAGE value="Rykket printstatements" />
     <MESSAGE value="Igang med send excess, rettet Port" />
     <MESSAGE value="A Christmas miracle" />
-    <option name="LAST_COMMIT_MESSAGE" value="A Christmas miracle" />
+    <MESSAGE value="Added additional check of surplus and lacking, potentially add an empty ArrayList to the ArrayList of sorted lists, to contain the completed ports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added additional check of surplus and lacking, potentially add an empty ArrayList to the ArrayList of sorted lists, to contain the completed ports" />
   </component>
 </project>

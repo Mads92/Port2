@@ -5,16 +5,17 @@ import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
-
-
         Port[] ports = createPorts();//new Port[] {jawah,tanju,dares,momba,zanzi,jebel,salah};
         //AdjacencyGraph portGraph = addPorts(ports);
 
+        /*
         System.out.println("INDEN SENDING");
         for (int i = 0; i < ports.length; i++) {
             System.out.println(ports[i].name + " Containers: " + ports[i].containers + " TEU: " + ports[i].teu + " Correct TEU: " + ports[i].correctTEU);
         }
 
+
+         */
 
         Port jawah = ports[0];
         Port tanju = ports[1];
@@ -39,16 +40,19 @@ public class Main {
         momba.shipContainers(salah, 2000);
         momba.shipContainers(jebel, 500);
 
-        //printPorts(ports);
+
         //portGraph.PrintGraph();
+
         System.out.println("Efter: ");
         for (int i = 0; i < ports.length; i++) {
             Port p = ports[i]; // Used here so it doesn't have to be written out each time
             //Deprecated possibly
             //System.out.println(p.name + " Current number of containers: " + p.containers + " Difference from correct number of containers: " + p.containerDifference());
-            System.out.println(p.name + " Correct TEU " + p.correctTEU + " Current TEU: " + p.teu);
+            System.out.println(p.name + " Correct TEU " + p.correctTEU + " Current TEU: " + p.teu + " Container difference " + p.containerDifference());
         }
-        myAlg(ports);
+
+
+        System.out.println(myAlg(ports));
         /*
         System.out.println("Jawaharal Nehru:");
         System.out.println(jawah.hasRequiredContainers());
@@ -76,7 +80,6 @@ public class Main {
         for (int i = 0; i < ports.size(); i++) {
             System.out.println(ports.get(i).name + " difference from needed containers: " + ports.get(i).containerDifference());
         }
-        return;
     }
 
     public static ArrayList<ArrayList<Port>> splitPorts(Port[] ports) {
@@ -106,19 +109,26 @@ public class Main {
         return collection;
     }
 
-    public static void sendExcess(Port from, Port to) {
+    public static int sendExcess(Port from, Port to) {
+        int cost = 0;
         if (from.containerDifference() <= Math.abs(to.containerDifference())) {
-            System.out.println("Sending " + from.containerDifference() + " from " + from.name + " to " + to.name);
+            cost += from.containerDifference();
+            System.out.println("Sending (SMALLER) " + from.containerDifference() + " from " + from.name + " to " + to.name);
             from.shipContainers(to, from.containerDifference());
         }
         if (from.containerDifference() > Math.abs(to.containerDifference())) {
-            System.out.println("Sending " +( from.containerDifference() - Math.abs(to.containerDifference())) + " from " + from.name + " to " + to.name);
+            cost +=Math.abs(to.containerDifference());
+            System.out.println("Sending (LARGER) " +(  Math.abs(to.containerDifference())) + " from " + from.name + " to " + to.name);
             from.shipContainers(to,  Math.abs(to.containerDifference()));
 
         }
+
+        else {cost += 0;}
+        return cost*100;
     }
 
-    public static void myAlg(Port[] ports) {
+    public static int myAlg(Port[] ports) {
+        int cost = 0;
         ArrayList<ArrayList<Port>> sortedLists = splitPorts(ports);
         ArrayList<Port> surplusPorts = sortedLists.get(0);
         ArrayList<Port> lackingPorts = sortedLists.get(1);
@@ -126,45 +136,20 @@ public class Main {
         ArrayList<Port> checkSurp = new ArrayList<>();
         ArrayList<Port> checkLack = new ArrayList<>();
 
-        while ((!lackingPorts.isEmpty() && !surplusPorts.isEmpty())) {
-            sendExcess(surplusPorts.get(0), lackingPorts.get(lackingPorts.size() - 1));
-            if (surplusPorts.get(0).containerDifference() == 0) {
-                System.out.println("Surplus done, moving to next");
-                checkSurp.add(surplusPorts.get(0));
-                surplusPorts.remove(0);
-            }
+        while (!lackingPorts.isEmpty()) {
+            //System.out.println("Surplus: " + surplusPorts.get(0).containerDifference());
+            cost +=sendExcess(surplusPorts.get(0), lackingPorts.get(lackingPorts.size() - 1));
+
             if (lackingPorts.get(lackingPorts.size() - 1).containerDifference() == 0) {
                 checkLack.add(lackingPorts.get(lackingPorts.size() - 1));
                 lackingPorts.remove(lackingPorts.size() - 1);
                 System.out.println("Completed, moving to next port");
             }
-
-
-
-        /*System.out.println("Surplus");
-        printPorts(surplusPorts);
-        System.out.println("Lacking");
-        printPorts(lackingPorts);
-        //sendExcess(surplusPorts.get(0),lackingPorts.get(lackingPorts.size()-1));
-        System.out.println("First send, surplus");
-        printPorts(surplusPorts);
-        System.out.println("Lacking");
-        printPorts(lackingPorts);
-
-         */
-
-
-        /*
-        System.out.println("Sorted Mangler: ");
-        for (int i = 0; i < lackingPorts.size(); i++) {
-            System.out.println(lackingPorts.get(i).name + " Teu: " + lackingPorts.get(i).teu);
-        }
-        System.out.println("Sorted Surpus:");
-        for (int i = 0; i < surplusPorts.size(); i++) {
-            System.out.println(surplusPorts.get(i).name + " Teu: " + surplusPorts.get(i).teu);
-
-        }
-        */
+            if (surplusPorts.get(0).containerDifference() == 0) {
+                System.out.println("Surplus done, moving to next");
+                checkSurp.add(surplusPorts.get(0));
+                surplusPorts.remove(0);
+            }
 
         }
         System.out.println("Surplus check");
@@ -172,6 +157,7 @@ public class Main {
         System.out.println("");
         System.out.println("Lacking check");
         printPorts(checkLack);
+        return cost;
     }
 }
     //GRAVEYARD
