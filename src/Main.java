@@ -107,21 +107,28 @@ public class Main {
             }
         }
         Collections.sort(surplusPorts,new PortSorter());
-        System.out.println("Sorted Surpus:");
-        for (int i = 0; i < surplusPorts.size(); i++) {
-            System.out.println(surplusPorts.get(i).name + " Teu: " + surplusPorts.get(i).teu);
-        }
+
         Collections.sort(manglerPorts, new PortSorter());
-        System.out.println("Sorted Mangler: ");
-        for (int i = 0; i < manglerPorts.size(); i++) {
-            System.out.println(manglerPorts.get(i).name + " Teu: " + manglerPorts.get(i).teu);
-        }
+
         collection.add(surplusPorts);
         collection.add(manglerPorts);
         return collection;
     }
     public static void myAlg(Port[] ports){
-        splitPorts(ports);
+        ArrayList<ArrayList<Port>>sortedLists =splitPorts(ports);
+        ArrayList<Port> surplusPorts = sortedLists.get(0);
+        ArrayList<Port> lackingPorts = sortedLists.get(1);
+        /*
+        System.out.println("Sorted Mangler: ");
+        for (int i = 0; i < lackingPorts.size(); i++) {
+            System.out.println(lackingPorts.get(i).name + " Teu: " + lackingPorts.get(i).teu);
+        }
+        System.out.println("Sorted Surpus:");
+        for (int i = 0; i < surplusPorts.size(); i++) {
+            System.out.println(surplusPorts.get(i).name + " Teu: " + surplusPorts.get(i).teu);
+
+        }
+        */
 
     }
 }
