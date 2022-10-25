@@ -31,12 +31,8 @@ public class Port {
         //If containerDifference is positive, the port has too many containers,
         //if negative, the port needs containers,
         //if 0, the port has the correct amount of containers
-        return teu - correctTEU;
+        return teu -correctTEU;
     }
 
-    public void sentExcess(Port p){
-        if (containerDifference() > p.containerDifference()){
-            shipContainers(p,containerDifference());
-        }
-    }
+
 }

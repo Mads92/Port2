@@ -4,12 +4,6 @@ public class PortSorter implements Comparator <Port> {
     @Override
     public int compare(Port o1, Port o2) {
 
-        if (o1.teu> o2.teu){
-            return 1;
-        }
-        if (o1.teu < o2.teu){
-            return -1;
-        }
-        return 0;
+        return o1.containerDifference()-o2.containerDifference();
     }
 }
