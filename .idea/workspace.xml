@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="378cbf28-59ca-461d-bb88-f1da01b38271" name="Changes" comment="Split arrays implemented, port comparator implemented." />
+    <list default="true" id="378cbf28-59ca-461d-bb88-f1da01b38271" name="Changes" comment="Rykket printstatements">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Port.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Port.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +57,7 @@
       <workItem from="1665569600518" duration="4782000" />
       <workItem from="1665646412630" duration="3371000" />
       <workItem from="1665676585477" duration="3379000" />
-      <workItem from="1666685975665" duration="4473000" />
+      <workItem from="1666685975665" duration="5374000" />
     </task>
     <task id="LOCAL-00001" summary="Ports created, methods for shipping containers implemented,ass well as calculations of the number of excess/missing containers">
       <created>1665572858113</created>
@@ -104,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666690430397</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Rykket printstatements">
+      <created>1666690841530</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1666690841530</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +142,7 @@
     <MESSAGE value="Removed the construction of Ports and ports-arry from Main to seperate method" />
     <MESSAGE value="Rewrote to remove unnecessary use of AdjacencyGraph" />
     <MESSAGE value="Split arrays implemented, port comparator implemented." />
-    <option name="LAST_COMMIT_MESSAGE" value="Split arrays implemented, port comparator implemented." />
+    <MESSAGE value="Rykket printstatements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rykket printstatements" />
   </component>
 </project>

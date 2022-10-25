@@ -5,13 +5,7 @@ import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
-      /*  Port jawah = new Port("Jawaharal Nehru", 2,4000);
-        Port tanju = new Port("Tanjung Pelepas", 5,24000);
-        Port dares = new Port("Dar Es Salaam", 3,10000);
-        Port momba = new Port("Mombasa", 2,2500);
-        Port zanzi = new Port("Zanzibar", 0,0);
-        Port jebel = new Port("Jebel Ali Dubai",0,0);
-        Port salah = new Port("Salalah", 0,0);*/
+
 
         Port[] ports = createPorts();//new Port[] {jawah,tanju,dares,momba,zanzi,jebel,salah};
         //AdjacencyGraph portGraph = addPorts(ports);
@@ -77,19 +71,11 @@ public class Main {
         arr = new Port[]{jawah, tanju, dares, momba, zanzi, jebel, salah};
         return arr;
     }
-    public static void printPorts(Port[] ports){
-        for (int i = 0; i < ports.length; i++) {
-            System.out.println(ports[i].name + " difference from needed containers: " + ports[i].containerDifference() );
+    public static void printPorts(ArrayList<Port> ports){
+        for (int i = 0; i < ports.size(); i++) {
+            System.out.println(ports.get(i).name + " difference from needed containers: " + ports.get(i).containerDifference() );
         }
         return;
-    }
-
-    public static AdjacencyGraph addPorts(Port[] ports){
-        AdjacencyGraph p = new AdjacencyGraph();
-        for (int i = 0; i < ports.length; i++) {
-            p.addVertex(ports[i]);
-        }
-        return p;
     }
 
     public static ArrayList<ArrayList<Port>> splitPorts(Port[] ports){
@@ -118,6 +104,15 @@ public class Main {
         ArrayList<ArrayList<Port>>sortedLists =splitPorts(ports);
         ArrayList<Port> surplusPorts = sortedLists.get(0);
         ArrayList<Port> lackingPorts = sortedLists.get(1);
+        System.out.println("Surplus");
+        printPorts(surplusPorts);
+        System.out.println("Lacking");
+        printPorts(lackingPorts);
+        surplusPorts.get(0).sentExcess(lackingPorts.get(0));
+        System.out.println("First send, surplus");
+        printPorts(surplusPorts);
+        System.out.println("Lacking");
+        printPorts(lackingPorts);
         /*
         System.out.println("Sorted Mangler: ");
         for (int i = 0; i < lackingPorts.size(); i++) {
@@ -132,3 +127,21 @@ public class Main {
 
     }
 }
+    //GRAVEYARD
+      /*  Port jawah = new Port("Jawaharal Nehru", 2,4000);
+        Port tanju = new Port("Tanjung Pelepas", 5,24000);
+        Port dares = new Port("Dar Es Salaam", 3,10000);
+        Port momba = new Port("Mombasa", 2,2500);
+        Port zanzi = new Port("Zanzibar", 0,0);
+        Port jebel = new Port("Jebel Ali Dubai",0,0);
+        Port salah = new Port("Salalah", 0,0);
+
+    public static AdjacencyGraph addPorts(Port[] ports){
+        AdjacencyGraph p = new AdjacencyGraph();
+        for (int i = 0; i < ports.length; i++) {
+            p.addVertex(ports[i]);
+        }
+        return p;
+    }
+
+       */
