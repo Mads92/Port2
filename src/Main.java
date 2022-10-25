@@ -2,15 +2,15 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Port jawah = new Port("Jawaharal Nehru", 2,4000);
+      /*  Port jawah = new Port("Jawaharal Nehru", 2,4000);
         Port tanju = new Port("Tanjung Pelepas", 5,24000);
         Port dares = new Port("Dar Es Salaam", 3,10000);
         Port momba = new Port("Mombasa", 2,2500);
         Port zanzi = new Port("Zanzibar", 0,0);
         Port jebel = new Port("Jebel Ali Dubai",0,0);
-        Port salah = new Port("Salalah", 0,0);
+        Port salah = new Port("Salalah", 0,0);*/
 
-        Port[] ports = new Port[] {jawah,tanju,dares,momba,zanzi,jebel,salah};
+        Port[] ports = createPorts();//new Port[] {jawah,tanju,dares,momba,zanzi,jebel,salah};
         AdjacencyGraph portGraph = addPorts(ports);
 
         System.out.println("INDEN SENDING");
@@ -18,6 +18,14 @@ public class Main {
             System.out.println(portGraph.ports.get(i).name + " Containers: " + portGraph.ports.get(i).containers + " TEU: " + portGraph.ports.get(i).teu + " Correct TEU: " + portGraph.ports.get(i).correctTEU);
         }
 
+
+        Port jawah = ports[0];
+        Port tanju = ports[1];
+        Port dares= ports[2];
+        Port momba = ports[3];
+        Port zanzi = ports[4];
+        Port jebel = ports[5];
+        Port salah = ports[6];
         jawah.shipContainers(momba, 2000);
         jawah.shipContainers(dares, 2000);
 
@@ -53,6 +61,18 @@ public class Main {
          */
     }
 
+    public static Port[] createPorts(){
+        Port[] arr;
+        Port jawah = new Port("Jawaharal Nehru", 2,4000);
+        Port tanju = new Port("Tanjung Pelepas", 5,24000);
+        Port dares = new Port("Dar Es Salaam", 3,10000);
+        Port momba = new Port("Mombasa", 2,2500);
+        Port zanzi = new Port("Zanzibar", 0,0);
+        Port jebel = new Port("Jebel Ali Dubai",0,0);
+        Port salah = new Port("Salalah", 0,0);
+        arr = new Port[]{jawah, tanju, dares, momba, zanzi, jebel, salah};
+        return arr;
+    }
     public static void printPorts(Port[] ports){
         for (int i = 0; i < ports.length; i++) {
             System.out.println(ports[i].name + " difference from needed containers: " + ports[i].containerDifference() );
