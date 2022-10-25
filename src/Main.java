@@ -123,12 +123,10 @@ public class Main {
         ArrayList<Port> surplusPorts = sortedLists.get(0);
         ArrayList<Port> lackingPorts = sortedLists.get(1);
 
-        ArrayList<Port> checkSurp;
-        ArrayList<Port> checkLack;
+        ArrayList<Port> checkSurp = new ArrayList<>();
+        ArrayList<Port> checkLack = new ArrayList<>();
 
         while ((!lackingPorts.isEmpty() && !surplusPorts.isEmpty())) {
-            checkSurp = new ArrayList<>();
-            checkLack = new ArrayList<>();
             sendExcess(surplusPorts.get(0), lackingPorts.get(lackingPorts.size() - 1));
             if (surplusPorts.get(0).containerDifference() == 0) {
                 System.out.println("Surplus done, moving to next");
@@ -169,6 +167,11 @@ public class Main {
         */
 
         }
+        System.out.println("Surplus check");
+        printPorts(checkSurp);
+        System.out.println("");
+        System.out.println("Lacking check");
+        printPorts(checkLack);
     }
 }
     //GRAVEYARD

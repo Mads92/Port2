@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="378cbf28-59ca-461d-bb88-f1da01b38271" name="Changes" comment="Igang med send excess, rettet Port">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="378cbf28-59ca-461d-bb88-f1da01b38271" name="Changes" comment="A Christmas miracle">
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Port.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Port.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PortSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PortSorter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +56,7 @@
       <workItem from="1665646412630" duration="3371000" />
       <workItem from="1665676585477" duration="3379000" />
       <workItem from="1666685975665" duration="5757000" />
-      <workItem from="1666695545336" duration="5910000" />
+      <workItem from="1666695545336" duration="6292000" />
     </task>
     <task id="LOCAL-00001" summary="Ports created, methods for shipping containers implemented,ass well as calculations of the number of excess/missing containers">
       <created>1665572858113</created>
@@ -124,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666691750748</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="A Christmas miracle">
+      <created>1666701767026</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666701767026</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +157,7 @@
     <MESSAGE value="Split arrays implemented, port comparator implemented." />
     <MESSAGE value="Rykket printstatements" />
     <MESSAGE value="Igang med send excess, rettet Port" />
-    <option name="LAST_COMMIT_MESSAGE" value="Igang med send excess, rettet Port" />
+    <MESSAGE value="A Christmas miracle" />
+    <option name="LAST_COMMIT_MESSAGE" value="A Christmas miracle" />
   </component>
 </project>
