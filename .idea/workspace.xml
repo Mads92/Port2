@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="378cbf28-59ca-461d-bb88-f1da01b38271" name="Changes" comment="Updated port and Main with TEUS">
+    <list default="true" id="378cbf28-59ca-461d-bb88-f1da01b38271" name="Changes" comment="Rewrote to remove unnecessary use of AdjacencyGraph">
+      <change afterPath="$PROJECT_DIR$/src/PortSorter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Port.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Port.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +58,7 @@
       <workItem from="1665569600518" duration="4782000" />
       <workItem from="1665646412630" duration="3371000" />
       <workItem from="1665676585477" duration="3379000" />
-      <workItem from="1666685975665" duration="1487000" />
+      <workItem from="1666685975665" duration="4120000" />
     </task>
     <task id="LOCAL-00001" summary="Ports created, methods for shipping containers implemented,ass well as calculations of the number of excess/missing containers">
       <created>1665572858113</created>
@@ -93,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665680496762</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Removed the construction of Ports and ports-arry from Main to seperate method">
+      <created>1666687514070</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666687514070</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +126,8 @@
     <MESSAGE value="Adjacency Graph added" />
     <MESSAGE value="Added TEU's to shipments" />
     <MESSAGE value="Updated port and Main with TEUS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated port and Main with TEUS" />
+    <MESSAGE value="Removed the construction of Ports and ports-arry from Main to seperate method" />
+    <MESSAGE value="Rewrote to remove unnecessary use of AdjacencyGraph" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rewrote to remove unnecessary use of AdjacencyGraph" />
   </component>
 </project>
