@@ -5,17 +5,7 @@ import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
-        Port[] ports = createPorts();//new Port[] {jawah,tanju,dares,momba,zanzi,jebel,salah};
-        //AdjacencyGraph portGraph = addPorts(ports);
-
-        /*
-        System.out.println("INDEN SENDING");
-        for (int i = 0; i < ports.length; i++) {
-            System.out.println(ports[i].name + " Containers: " + ports[i].containers + " TEU: " + ports[i].teu + " Correct TEU: " + ports[i].correctTEU);
-        }
-
-
-         */
+        Port[] ports = createPorts();
 
         Port jawah = ports[0];
         Port tanju = ports[1];
@@ -40,27 +30,8 @@ public class Main {
         momba.shipContainers(salah, 2000);
         momba.shipContainers(jebel, 500);
 
-
-        //portGraph.PrintGraph();
-
-        System.out.println("Efter: ");
-        for (int i = 0; i < ports.length; i++) {
-            Port p = ports[i]; // Used here so it doesn't have to be written out each time
-            //Deprecated possibly
-            //System.out.println(p.name + " Current number of containers: " + p.containers + " Difference from correct number of containers: " + p.containerDifference());
-            System.out.println(p.name + " Correct TEU " + p.correctTEU + " Current TEU: " + p.teu + " Container difference " + p.containerDifference());
-        }
-
-
-        System.out.println(myAlg(ports));
-        /*
-        System.out.println("Jawaharal Nehru:");
-        System.out.println(jawah.hasRequiredContainers());
-        System.out.println(jawah.containerDifference());
-        System.out.println("Momba:");
-        System.out.println(momba.hasRequiredContainers());
-        System.out.println(momba.containerDifference());
-         */
+        System.out.println("Calculating using myAlg");
+        System.out.println(" cost using algortihm: " + myAlg(ports));
     }
 
     public static Port[] createPorts() {
@@ -84,26 +55,22 @@ public class Main {
 
     public static ArrayList<ArrayList<Port>> splitPorts(Port[] ports) {
         ArrayList<Port> surplusPorts = new ArrayList<>();
-        ArrayList<Port> manglerPorts = new ArrayList<>();
+        ArrayList<Port> lackingPorts = new ArrayList<>();
         ArrayList<ArrayList<Port>> collection = new ArrayList<>();
         for (int i = 0; i < ports.length; i++) {
             if (ports[i].containerDifference() > 0) {
                 surplusPorts.add(ports[i]);
-                //System.out.println(ports[i].name + " Surplus");
             }
             if (ports[i].containerDifference() < 0) {
-                manglerPorts.add(ports[i]);
-                //System.out.println(ports[i].name+ " mangler");
+                lackingPorts.add(ports[i]);
             }
         }
-        //System.out.println("UNSORTED !!");
-        //printPorts(surplusPorts);
         Collections.sort(surplusPorts, new PortSorter());
 
-        Collections.sort(manglerPorts, new PortSorter());
+        Collections.sort(lackingPorts, new PortSorter());
 
         collection.add(surplusPorts);
-        collection.add(manglerPorts);
+        collection.add(lackingPorts);
 
         Collections.sort(collection.get(1), new PortSorter());
         return collection;
@@ -113,14 +80,13 @@ public class Main {
         int cost = 0;
         if (from.containerDifference() <= Math.abs(to.containerDifference())) {
             cost += from.containerDifference();
-            System.out.println("Sending (SMALLER) " + from.containerDifference() + " from " + from.name + " to " + to.name);
+            System.out.println("Sending " + from.containerDifference() + " from " + from.name + " to " + to.name);
             from.shipContainers(to, from.containerDifference());
         }
         if (from.containerDifference() > Math.abs(to.containerDifference())) {
             cost +=Math.abs(to.containerDifference());
-            System.out.println("Sending (LARGER) " +(  Math.abs(to.containerDifference())) + " from " + from.name + " to " + to.name);
+            System.out.println("Sending " +(  Math.abs(to.containerDifference())) + " from " + from.name + " to " + to.name);
             from.shipContainers(to,  Math.abs(to.containerDifference()));
-
         }
 
         else {cost += 0;}
@@ -133,24 +99,23 @@ public class Main {
         ArrayList<Port> surplusPorts = sortedLists.get(0);
         ArrayList<Port> lackingPorts = sortedLists.get(1);
 
-        ArrayList<Port> checkSurp = new ArrayList<>();
+        ArrayList<Port> checkSurp = new ArrayList<>(); //Not needed for the algorithm, used to confirm every is as expected
         ArrayList<Port> checkLack = new ArrayList<>();
 
         while (!lackingPorts.isEmpty()) {
-            //System.out.println("Surplus: " + surplusPorts.get(0).containerDifference());
             cost +=sendExcess(surplusPorts.get(0), lackingPorts.get(lackingPorts.size() - 1));
 
             if (lackingPorts.get(lackingPorts.size() - 1).containerDifference() == 0) {
                 checkLack.add(lackingPorts.get(lackingPorts.size() - 1));
+                System.out.println((lackingPorts.get(lackingPorts.size() - 1).name) + " has recieved it's needed number of containers");
                 lackingPorts.remove(lackingPorts.size() - 1);
-                System.out.println("Completed, moving to next port");
+
             }
             if (surplusPorts.get(0).containerDifference() == 0) {
-                System.out.println("Surplus done, moving to next");
+                System.out.println((surplusPorts.get(0).name) + " has shipped it's excess containers");
                 checkSurp.add(surplusPorts.get(0));
                 surplusPorts.remove(0);
             }
-
         }
         System.out.println("Surplus check");
         printPorts(checkSurp);
@@ -160,21 +125,3 @@ public class Main {
         return cost;
     }
 }
-    //GRAVEYARD
-      /*  Port jawah = new Port("Jawaharal Nehru", 2,4000);
-        Port tanju = new Port("Tanjung Pelepas", 5,24000);
-        Port dares = new Port("Dar Es Salaam", 3,10000);
-        Port momba = new Port("Mombasa", 2,2500);
-        Port zanzi = new Port("Zanzibar", 0,0);
-        Port jebel = new Port("Jebel Ali Dubai",0,0);
-        Port salah = new Port("Salalah", 0,0);
-
-    public static AdjacencyGraph addPorts(Port[] ports){
-        AdjacencyGraph p = new AdjacencyGraph();
-        for (int i = 0; i < ports.length; i++) {
-            p.addVertex(ports[i]);
-        }
-        return p;
-    }
-
-       */
